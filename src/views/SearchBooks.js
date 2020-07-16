@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Book from '../components/Book';
-import * as BooksAPI from '../BooksAPI';
+import * as BooksAPI from '../utils/BooksAPI';
 import { debounce } from 'lodash';
 
 class SearchBooks extends Component {
