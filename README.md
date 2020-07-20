@@ -5,5 +5,7 @@ This project was created for for Udacity's React Fundamentals course, developed 
 ## Project Setup
 
 clone the Project - git clone https://github.com/sofiafranek/udacity-myreads-a-book-lending-app.git
+
 install the dependencies - npm install
+
 start the project - npm start
