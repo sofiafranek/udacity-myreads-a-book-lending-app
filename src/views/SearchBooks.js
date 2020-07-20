@@ -20,7 +20,6 @@ class SearchBooks extends Component {
       BooksAPI.search(query, 20).then((data) => {
         if (data) {
           if (!data.error) {
-            console.log(data);
             data = data.map((book) => {
               const bookInShelf = this.props.books.find((b) => b.id === book.id);
               if (bookInShelf) {
