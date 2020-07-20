@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'Gordita';
+  src: url('Gordita\ Regular.woff');
+}
+
 html,
 body,
 .root {
   height: 100%;
+  font-family: Gordita;
 }
 body {
   line-height: 1.5;
@@ -13,7 +19,7 @@ body,
 
 .bookshelf,
 .books-grid {
-  max-width: 980px;
+  max-width: 1100px;
   margin: auto;
   padding: 15px;
 }
@@ -25,14 +31,22 @@ h2 {
 /* main page */
 
 .list-books-title {
-  padding: 10px 0;
-  background: #2e7c31;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+.list-books-title a {
+  text-decoration: none;
+  color: black;
+  line-height: 3em;
 }
 .list-books-title h1 {
-  font-weight: 400;
+  font-weight: bold;
   margin: 0;
-  color: white;
+  color: #5489b8;
 }
 
 .list-books-content {
@@ -51,10 +65,15 @@ h2 {
 }
 
 .bookshelf-title {
-  border-bottom: 1px solid #dedede;
+  padding: 20px 0;
+  color: #5489b8;
+  text-decoration: underline;
 }
-.bookshelf-books {
+.bookshelf-container {
   text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding: 50px 0px;
 }
 
 .open-search {
@@ -78,11 +97,14 @@ h2 {
 
 /* search page */
 
+.search-books {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
 .search-books-bar {
-  position: fixed;
   width: 100%;
-  top: 0;
-  left: 0;
+  margin: 40px 0;
   z-index: 5;
   display: flex;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
@@ -159,7 +181,7 @@ h2 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #5489b8;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;

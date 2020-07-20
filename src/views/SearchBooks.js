@@ -9,11 +9,12 @@ class SearchBooks extends Component {
     searchQuery: '',
     showingBooks: [],
   };
+
   componentWillMount() {
-    this.updateQuery = debounce(this.updateQuery, 100);
+    this.update = debounce(this.update, 100);
   }
 
-  updateQuery = (query) => {
+  update = (query) => {
     if (query) {
       this.setState({ searchQuery: 'searching' });
       BooksAPI.search(query, 20).then((data) => {
@@ -49,7 +50,7 @@ class SearchBooks extends Component {
           </Link>
           <div className="search-books-input-wrapper">
             <input
-              onChange={(event) => this.updateQuery(event.target.value)}
+              onChange={(event) => this.update(event.target.value)}
               type="text"
               placeholder="Search by title or author"
             />
@@ -62,7 +63,9 @@ class SearchBooks extends Component {
             )}
             {searchQuery === 'noresults' && <div className="search-book-results-msg"></div>}
             {searchQuery === 'error' && showingBooks === 'empty query' && (
-              <div className="search-book-results-msg">No results</div>
+              <div className="search-book-results-msg">
+                Sorry! No results match your search. Try again...
+              </div>
             )}
             {searchQuery === 'results' &&
               showingBooks.map((book) => (

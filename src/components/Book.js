@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Book = (props) => {
-  const onBookShelfChange = (e) => {
-    e.preventDefault();
+  const onBookShelfChange = (event) => {
+    event.preventDefault();
     if (props.updateBook) {
-      props.updateBook(props.book, e.target.value);
+      props.updateBook(props.book, event.target.value);
     }
   };
 
@@ -17,7 +17,7 @@ const Book = (props) => {
     <li key={book.id}>
       <div className="book">
         <div className="book-top">
-          {book.imageLinks && ( //Not all books have authors
+          {book.imageLinks && (
             <div
               className="book-cover"
               style={{
@@ -41,14 +41,8 @@ const Book = (props) => {
             )}
           </div>
         </div>
-        {book.title && (
-          <div className="book-title">
-            {
-              book.title //Not all books have authors
-            }
-          </div>
-        )}
-        {book.authors && //Not all books have authors
+        {book.title && <div className="book-title">{book.title}</div>}
+        {book.authors &&
           book.authors.map((author) => (
             <div className="book-authors" key={author}>
               {author}
