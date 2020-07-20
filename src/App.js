@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import * as BooksAPI from './utils/BooksAPI';
-import ListBooks from './views/ListBooks';
-import SearchBooks from './views/SearchBooks';
+import Homepage from './views/Homepage';
+import Search from './views/Search';
 
 import './App.css';
 
@@ -37,13 +37,13 @@ class BooksApp extends Component {
         <Route
           exact
           path="/"
-          render={() => <ListBooks books={this.state.books} updateBook={this.updateBook} />}
+          render={() => <Homepage books={this.state.books} updateBook={this.updateBook} />}
         />
 
         <Route
           exact
           path="/search"
-          render={() => <SearchBooks books={this.state.books} updateBook={this.updateBook} />}
+          render={() => <Search books={this.state.books} updateBook={this.updateBook} />}
         />
       </div>
     );

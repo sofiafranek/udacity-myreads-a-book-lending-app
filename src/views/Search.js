@@ -4,7 +4,7 @@ import Book from '../components/Book';
 import * as BooksAPI from '../utils/BooksAPI';
 import { debounce } from 'lodash';
 
-class SearchBooks extends Component {
+class Search extends Component {
   state = {
     searchQuery: '',
     showingBooks: [],
@@ -42,7 +42,7 @@ class SearchBooks extends Component {
     const { updateBook } = this.props;
     const { searchQuery, showingBooks } = this.state;
     return (
-      <div className="search-books">
+      <section className="search-books">
         <div className="search-books-bar">
           <Link className="close-search" to="/">
             Close
@@ -72,9 +72,9 @@ class SearchBooks extends Component {
               ))}
           </ol>
         </div>
-      </div>
+      </section>
     );
   }
 }
 
-export default SearchBooks;
+export default Search;

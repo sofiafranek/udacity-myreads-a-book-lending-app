@@ -64,7 +64,7 @@ h2 {
   }
 }
 
-.bookshelf-title {
+.bookshelf h2 {
   padding: 20px 0;
   color: #5489b8;
   text-decoration: underline;
